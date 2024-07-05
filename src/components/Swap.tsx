@@ -144,7 +144,6 @@ export const Swap = () => {
         }
         message.destroy()
         try {
-            debugger
             const one = new Token(ChainId.SEPOLIA, tokenOne.address, tokenOne.decimals)
             const two = new Token(ChainId.SEPOLIA, tokenTwo.address, tokenTwo.decimals)
             // const pair = await createPair(one, two)
@@ -267,13 +266,13 @@ export const Swap = () => {
                         <DownOutlined className='w-[17px] h-[17px]' />
                     </div>
                 </div>
-                <div
-                    className='disabled:bg-[#243056] disabled:opacity-40 disabled:text-[#5982f39b] h-[55px] w-full rounded-xl flex justify-center items-center bg-[#243056] font-bold duration-300 mb-[30px] mt-2 cursor-pointer'
+                <button
+                    className='disabled:bg-[#243056] disabled:opacity-40 disabled:text-[#5982f39b] disabled:cursor-not-allowed h-[55px] w-full rounded-xl flex justify-center items-center bg-[#243056] text-[#5981F3] text-xl font-bold duration-300 mb-[30px] mt-2 cursor-pointer'
                     onClick={fetchDexSwap}
                     disabled={!accountAddress || !tokenOneAmount}
                 >
                     Swap
-                </div>
+                </button>
             </div>
         </>
     )
